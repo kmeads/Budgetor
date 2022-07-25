@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Budgetor - Home</title>
+        
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../static/css/landing/header.css" th:href="@{/css/landing/header.css}" />
+        <link rel="stylesheet" type="text/css" href="../static/css/landing/style.css" th:href="@{/css/landing/style.css}" />
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+
+        <!-- JS -->
+    </head>
+    <body>
+        <div th:replace="landingFragments/header :: header" />
+        <div id="openStatementWrapper">
+            <p id="openStatement">
+                <span id="openStatementStart">Budgetor.</span><br>A simple personalized budgeting tool to help track every penny spent, and save every dollar earned.
+            </p>
+        </div>
+        <div id="compatibleDevicesWrapper" class="row">
+            <img src="https://img.icons8.com/ios/50/000000/google-play--v1.png" alt="play store icon"/>
+            <img src="https://img.icons8.com/ios/50/000000/internet--v1.png" alt="internet icon"/>
+            <img src="https://img.icons8.com/ios/50/000000/ios-logo.png" alt="ios icon"/>
+        </div>
+        <div id="sellerWrapper" class="row">
+            <div id="customSellerPointWrapper" class="sellerPointWrappers">
+                <h2>Customize</h2>
+                <p>Customize your budget to how it works best for you.</p>
+            </div>
+            <div id="freeSellerPointWrapper" class="sellerPointWrappers">
+                <h2>Free</h2>
+                <p>Budgetor will always be free to use.  Period.</p>
+            </div>
+            <div id="privacySellerPointWrapper" class="sellerPointWrappers">
+                <h2>Data Secure</h2>
+                <p>Your data is important.  We will never sell or distribute your information.</p>
+            </div>
+            <div id="goalSellerPointWrapper" class="sellerPointWrappers">
+                <h2>Plan Ahead</h2>
+                <p>Plan for your future by setting financial goals!</p>
+            </div>
+        </div>
+    </body>
+</html>
