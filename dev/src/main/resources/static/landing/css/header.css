@@ -1,0 +1,56 @@
+#headerWrapper {
+    background-color: white;
+    color: black;
+
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%);
+
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 128px;
+
+    padding: 2px 32px;
+}
+#headerWrapper div {
+    align-items: center;
+}
+.headerLinks {
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    margin-right: 32px;
+}
+.headerLinks:hover {
+    text-decoration: underline;
+    text-decoration-color: #0c0c59de;
+    text-decoration-thickness: 6px;
+}
+#homeLink {
+    font-size: 48px;
+    font-family: 'Koulen';
+    color: black;
+    text-decoration: none;
+    margin-right: 32px;
+}
+.menuParts {
+    width: 50%;
+    min-width: fit-content;
+}
+
+#logInBtn {
+    background-color: #0c0c59de;
+    border: 1px solid white;
+    border-radius: 12px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    margin-left: 16px;
+}
+#logInBtn:hover {
+    background-color: white;
+    border: 6px solid #0c0c59de;
+    color: black;
+}

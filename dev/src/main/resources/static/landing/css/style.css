@@ -1,0 +1,59 @@
+body {
+    margin: 0px;
+    background-color: whitesmoke;
+    font-family: 'Montserrat', sans-serif, 'Courier New', Courier, monospace;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.rowRev{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Opening Statement */
+#openStatementWrapper {
+    font-size: 26px;
+    text-align: center;
+    padding: 150px 20%;
+    color: black;
+    height: 60vh;
+    background-image: url("/../img/coins.jpg") no-repeat center top fixed;
+}
+#openStatementStart {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* compatible devices */
+#compatibleDevicesWrapper {
+    background-color: white;
+    width: 100%;
+    height: fit-content;
+    justify-content: space-around;
+    padding: 8px 0px;
+    color: black;
+}
+
+/* Seller Portion */
+#sellerWrapper {
+    padding: 50px 0px;
+    background-color: white;
+    color: black;
+}
+.sellerPointWrappers {
+    width: 20%;
+    height: 300px;
+    padding: 32px;
+}
+.sellerPointWrappers h2 {
+    text-align: center;
+}

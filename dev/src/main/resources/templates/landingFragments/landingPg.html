@@ -5,8 +5,8 @@
         <title>Budgetor - Home</title>
         
         <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="../static/css/landing/header.css" th:href="@{/css/landing/header.css}" />
-        <link rel="stylesheet" type="text/css" href="../static/css/landing/style.css" th:href="@{/css/landing/style.css}" />
+        <link rel="stylesheet" type="text/css" href="../static/landing/css/header.css" th:href="@{/landing/css/header.css}" />
+        <link rel="stylesheet" type="text/css" href="../static/landing/css/style.css" th:href="@{/landing/css/style.css}" />
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
         <!-- JS -->
     </head>
     <body>
-        <div th:replace="landingFragments/header :: header" />
+        <nav th:replace="landingFragments/header :: header" />
         <div id="openStatementWrapper">
             <p id="openStatement">
                 <span id="openStatementStart">Budgetor.</span><br>A simple personalized budgeting tool to help track every penny spent, and save every dollar earned.
