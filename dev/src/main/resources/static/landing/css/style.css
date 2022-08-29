@@ -26,7 +26,7 @@ body {
     padding: 150px 20%;
     color: black;
     height: 60vh;
-    background-image: url("/../img/coins.jpg") no-repeat center top fixed;
+    background-image: url("../img/coins.jpg") no-repeat 400px center top fixed;
 }
 #openStatementStart {
     font-size: 48px;
