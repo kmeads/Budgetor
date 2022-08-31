@@ -11,6 +11,9 @@
     display: flex;
     flex-wrap: wrap;
     border-radius: 128px;
+    box-shadow: -1px 0px 23px 3px rgba(0,0,0,1);
+    -webkit-box-shadow: -1px 0px 23px 3px rgba(0,0,0,1);
+    -moz-box-shadow: -1px 0px 23px 3px rgba(0,0,0,1);
 
     padding: 2px 32px;
 }
@@ -26,7 +29,7 @@
 .headerLinks:hover {
     text-decoration: underline;
     text-decoration-color: #0c0c59de;
-    text-decoration-thickness: 6px;
+    text-decoration-thickness: 2px;
 }
 #homeLink {
     font-size: 48px;

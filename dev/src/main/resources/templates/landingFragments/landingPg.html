@@ -7,6 +7,7 @@
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="../static/landing/css/header.css" th:href="@{/landing/css/header.css}" />
         <link rel="stylesheet" type="text/css" href="../static/landing/css/style.css" th:href="@{/landing/css/style.css}" />
+
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,9 +19,8 @@
     <body>
         <nav th:replace="landingFragments/header :: header" />
         <div id="openStatementWrapper">
-            <p id="openStatement">
-                <span id="openStatementStart">Budgetor.</span><br>A simple personalized budgeting tool to help track every penny spent, and save every dollar earned.
-            </p>
+            <h1 id="openStatementStart">Budgetor.</h1>
+            <p id="openStatement">A simple personalized budgeting tool to help track every penny spent, and save every dollar earned.</p>
         </div>
         <div id="compatibleDevicesWrapper" class="row">
             <img src="https://img.icons8.com/ios/50/000000/google-play--v1.png" alt="play store icon"/>
@@ -38,12 +38,18 @@
             </div>
             <div id="privacySellerPointWrapper" class="sellerPointWrappers">
                 <h2>Data Secure</h2>
-                <p>Your data is important.  We will never sell or distribute your information.</p>
+                <p>Your data is important.  Budgetor will never sell or distribute your information.</p>
             </div>
             <div id="goalSellerPointWrapper" class="sellerPointWrappers">
                 <h2>Plan Ahead</h2>
                 <p>Plan for your future by setting financial goals!</p>
             </div>
         </div>
+        <div id="callToArmsWrapper" class="row">
+            <h1>My Statement to You.</h1>
+            <p>The last thing you need to worry about when stressing about money is paying for budgeting software. This software is a passion project to help anyone track and make sense of their situation.  Take the busy work out of maintaining a budget and focus on the big picture goals that help you achieve financial freedom.</p>
+            <button id="signUpBtn">Sign Up</button>
+        </div>
+
     </body>
 </html>

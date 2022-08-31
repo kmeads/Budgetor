@@ -24,13 +24,27 @@ body {
     font-size: 26px;
     text-align: center;
     padding: 150px 20%;
-    color: black;
+    color: white;
     height: 60vh;
-    background-image: url("../img/coins.jpg") no-repeat 400px center top fixed;
+    background: url("../img/sprouts.jpg") no-repeat center top fixed;
+    background-size: cover;
 }
 #openStatementStart {
     font-size: 48px;
-    font-weight: bold;
+    font-weight: bolder;
+
+    animation-name: fadeIn;
+    animation-duration: 5s;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    0%      {
+      opacity: 0;
+      }
+    100%    {
+      opacity: 1;
+      }
 }
 
 /* compatible devices */
@@ -39,21 +53,55 @@ body {
     width: 100%;
     height: fit-content;
     justify-content: space-around;
-    padding: 8px 0px;
+    padding: 32px 0px;
     color: black;
 }
 
 /* Seller Portion */
 #sellerWrapper {
-    padding: 50px 0px;
-    background-color: white;
+    padding: 0px;
+    background-color: #cacaca;
     color: black;
 }
 .sellerPointWrappers {
     width: 20%;
-    height: 300px;
+    height: fit-content;
     padding: 32px;
 }
 .sellerPointWrappers h2 {
     text-align: center;
+}
+
+/* Call To Arms */
+#callToArmsWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    padding: 0px 10%;
+    text-align: center;
+    margin: 72px 0px;
+    font-size: 28px;
+}
+
+#callToArmsWrapper p {
+    font-size: 24px;
+}
+
+#signUpBtn {
+    background-color: #0c0c59de;
+    border: 1px solid white;
+    border-radius: 12px;
+    width: 120px;
+    height: 50px;
+    color: white;
+    margin: 64px 16px;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#signUpBtn:hover {
+    background-color: white;
+    border: 6px solid #0c0c59de;
+    color: black;
 }
