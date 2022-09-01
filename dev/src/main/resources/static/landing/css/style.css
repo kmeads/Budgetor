@@ -24,27 +24,9 @@ body {
     font-size: 26px;
     text-align: center;
     padding: 150px 20%;
-    color: white;
+    color: rgb(41, 41, 41);
     height: 60vh;
-    background: url("../img/sprouts.jpg") no-repeat center top fixed;
-    background-size: cover;
-}
-#openStatementStart {
-    font-size: 48px;
-    font-weight: bolder;
-
-    animation-name: fadeIn;
-    animation-duration: 5s;
-    position: relative;
-}
-
-@keyframes fadeIn {
-    0%      {
-      opacity: 0;
-      }
-    100%    {
-      opacity: 1;
-      }
+    background: conic-gradient(from 90deg at 1px 1px, transparent 90deg, #4c4c4c38 0) 0 0/50px 50px;
 }
 
 /* compatible devices */
@@ -67,8 +49,6 @@ body {
     width: 20%;
     height: fit-content;
     padding: 32px;
-}
-.sellerPointWrappers h2 {
     text-align: center;
 }
 
