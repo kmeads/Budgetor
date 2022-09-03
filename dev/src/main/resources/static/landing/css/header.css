@@ -16,6 +16,7 @@
     -moz-box-shadow: -1px 0px 23px 3px rgba(0,0,0,1);
 
     padding: 2px 32px;
+    z-index: 3;
 }
 #headerWrapper div {
     align-items: center;
