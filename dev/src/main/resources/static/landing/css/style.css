@@ -77,10 +77,10 @@ body {
 
 @keyframes chartReveal {
     0% {
-        transform: translate(0%);
+        width: 100%;
     }
     100% {
-        transform: translate(100%);
+        width: 0%
     }
 }
 
