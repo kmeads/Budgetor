@@ -54,6 +54,7 @@ body {
     height: 100vh;
     width: 100vw;
     z-index: -1;
+    transform-origin: right;
 
     animation: chartReveal;
     animation-duration: 10s;
@@ -76,11 +77,8 @@ body {
 }
 
 @keyframes chartReveal {
-    0% {
-        width: 100%;
-    }
     100% {
-        width: 0%
+        transform: rotateY(90deg);
     }
 }
 
