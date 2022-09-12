@@ -17,6 +17,18 @@ public class HomeController {
         return "landingFragments/about";
     }
 
+    @GetMapping("/app")
+    fun app() : String {
+        println("in app get mapping");
+        return "landingFragments/app";
+    }
+
+    @GetMapping("/contact")
+    fun contact() : String {
+        println("in contact get mapping");
+        return "landingFragments/contact";
+    }
+
     @GetMapping("/error")
     fun error() : String {
         return "error";
