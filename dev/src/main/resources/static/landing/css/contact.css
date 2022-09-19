@@ -1,0 +1,51 @@
+body {
+    text-align: center;
+    padding: 0px 20%;
+}
+#contactWrapper {
+    align-items: center;
+    padding: 0px 20%;
+}
+
+#contactFormWrapper {
+    background-color: #00263a;
+    padding: 16px;
+    border-radius: 3px;
+    align-items: center;
+}
+.inputWrappers {
+    justify-content: space-around;
+    position: relative;
+}
+.contactFormInputs {
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 16px;
+    width: 45%;
+    height: 32px;
+    text-align: center;
+    font-size: 16px;
+    min-width: 200px;
+}
+#messageInput {
+    width: 100%;
+    height: 20vh;
+    font-size: 18px;
+}
+.contactBtns {
+    border: none;
+    margin-top: 32px;
+    border-radius: 3px; 
+    min-width: 128px;
+    width: auto;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+#sendMsgBtn {
+    background-color: white;
+}
+#clearMsgBtn {
+    background-color: #a3a3a3;
+}

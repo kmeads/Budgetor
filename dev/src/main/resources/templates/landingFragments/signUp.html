@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Budgetor - Sign Up</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="/landing/css/signUp.css" th:href="@{/landing/css/signUp.css}" />
+        <link rel="stylesheet" type="text/css" href="/landing/css/style.css" th:href="@{/landing/css/style.css}" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+        <!-- JS -->
+        <script type="text/javascript" src="/landing/js/signUp.js" th:href="@{/landing/js/signUp.js}" defer></script>
+    </head>
+    <body>
+        <nav id="header" class="row">
+            <div>
+                <a href="/" >&#8592; BUDGETOR</a>
+            </div>
+            <div>
+                <span>Already have an account?</span>
+                <button type="button" id="logInBtn">Log In</button>
+            </div>
+        </nav>
+        <div id="signUpFormWrapper">
+            <h1>Create an Account</h1><br>
+            <!-- Name -->
+            <div class="row inputWrappers">
+                <input type="text" id="firstNameInput" class="signUpFormInputs" oninput="validateInput()" placeholder="First Name (optional)">
+                <input type="text" id="lastNameInput" class="signUpFormInputs" oninput="validateInput()" placeholder="Last Name (optional)">
+            </div>
+            <!-- Contact Details -->
+            <div class="row inputWrappers">
+                <div class="tooltip">
+                    <input type="tel" id="phoneNumberInput" class="signUpFormInputs" oninput="validateInput()" pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}" placeholder="Phone Number (optional)">
+                    <span class="tooltipText">(###) ###-####</span>
+                </div>
+                <input type="email" id="emailInput" class="signUpFormInputs" oninput="validateInput()" placeholder="Email" required>
+            </div>
+            <div class="row inputWrappers">
+                <input type="password" id="passwordInput" class="signUpFormInputs" oninput="validateInput()" placeholder="Password" required>
+            </div>
+            <div class="row inputWrappers">
+                <input type="password" id="passwordConfirmationInput" class="signUpFormInputs" oninput="validateInput()" placeholder="Confirm Password" required>
+            </div>
+            <div id="helpText" class="row"></div>
+            <!-- Submit & Clear Btns -->
+            <div class="row inputWrappers">
+                <!-- Account Creation Btn -->
+                <button type="submit" id="createAccountBtn" onclick="createAccount()" disabled>Create Account</button>
+            </div>
+        </div>
+    </body>
+</html>
