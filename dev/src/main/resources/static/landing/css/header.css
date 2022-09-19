@@ -57,7 +57,5 @@
     font-weight: bold;
 }
 #logInBtn:hover {
-    background-color: white;
     border: 6px solid #0c0c59de;
-    color: black;
 }

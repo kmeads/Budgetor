@@ -12,6 +12,7 @@ body {
 
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 #header div {
     display: flex;

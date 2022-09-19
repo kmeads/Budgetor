@@ -46,6 +46,54 @@ body {
     visibility: visible;
 }
 
+/* Log In Wrapper */
+#logInWrapper {
+    position: absolute;
+    bottom: -215px;
+    right: 10px;
+
+    visibility: hidden;
+    width: fit-content;
+    height: fit-content;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 10px;
+    padding: 16px 8px;
+    z-index: 3;
+}
+#logInWrapper div {
+    justify-content: center;
+    align-items: center;
+}
+.visible {
+    visibility: visible !important;
+}
+.logInInputs {
+    border: none;
+    border-radius: 3px;
+    margin-bottom: 16px;
+    width: 80%;
+    height: 25px;
+    text-align: center;
+    font-size: 16px;
+    background-color: #dadada;
+}
+#submitLogInBtn {
+    border: 3px solid #0c0c59de;
+    border-radius: 2px;
+    font-size: 16px;
+    width: fit-content;
+    height: fit-content;
+    padding: 16px 32px;
+    background-color: #0c0c59de;
+    color: white;
+}
+#submitLogInBtn:hover {
+    border-color: #3e3ed3de;
+}
+
 /* Opening Statement */
 #openStatementWrapper {
     font-size: 26px;
