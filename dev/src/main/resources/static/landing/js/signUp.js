@@ -74,7 +74,26 @@ function validateInput() {
     }
 }
 
-function createAccount() {
+async function createAccount() {
     if(!isValidInput) return;
-    alert('You created an account successfully!');
+
+    //send data to backend
+    await fetch('http://localhost:8080/api/user', {
+        method: 'POST',
+        headers: {
+            'Accept' : 'application/json',
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify({
+            email: emailInput.value,
+            password: passwordInput.value,
+            first_name: firstNameInput.value,
+            last_name: lastNameInput.value,
+            phone_number: phoneNumberInput.value
+        })
+    }).then(response => {
+        if(response.ok) {
+            alert('created');
+        } else alert('error');
+    });
 }
