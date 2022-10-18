@@ -1,5 +1,11 @@
 # Ignore Gradle project-specific cache directory
 .gradle
 
+#ignore annoying files
+.vscode
+
+# ignore application.properties file as it's a security risk
+*.properties
+
 # Ignore Gradle build output directory
 build
