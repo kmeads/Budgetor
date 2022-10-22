@@ -13,18 +13,22 @@ class SecurityConfig {
     @Bean
     fun configure(http : HttpSecurity) : SecurityFilterChain {
         return http.csrf().disable()
-                   .authorizeRequests()
-                   //authorize all home page sites
-                   .antMatchers("/").permitAll()
-                   .antMatchers("/about").permitAll()
-                   .antMatchers("/app").permitAll()
-                   .antMatchers("/contact").permitAll()
-                   .antMatchers("/signUp").permitAll()
-                   .antMatchers("/error").permitAll()
-                   //only allow users with credentials to look at budgetor sites
-                   .antMatchers("/auth").hasRole("USER")
-                   .and()
-                   .httpBasic()
-                   .and().build();
+            .authorizeRequests()
+                //allow everyone to see the landing pages
+                .antMatchers(
+                    "/",
+                    "/about",
+                    "/app",
+                    "/signUp",
+                    "/contact",
+                    "/landing/css/*", //enable all css
+                    "/landing/js/*", //enable all js
+                    "/landing/img/*", //enable all images
+                    "/favicon.ico",
+                ).permitAll()
+                .anyRequest().authenticated()
+            .and()
+            .httpBasic()
+            .and().build();
     }
 }

@@ -2,6 +2,7 @@ package com.budgetor.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import kotlin.collections.mutableListOf;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 
@@ -13,6 +14,7 @@ data class User (
     val id : kotlin.Int,
 
     @JsonProperty("email")
+    @Column(unique = true)
     var email : String,
 
     @JsonProperty("password")
@@ -32,4 +34,10 @@ data class User (
     
     // @OneToMany
     // var userRoles : MutableList<UserRole> = mutableListOf<UserRole>()
-)
+) {
+    init {
+        this.password = BCryptPasswordEncoder().encode(this.password); // encrypts password of user *before* it enters the DB
+    }
+
+    fun authenticate(challenge : String) : Boolean = BCryptPasswordEncoder().matches(challenge, this.password);
+}

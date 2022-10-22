@@ -7,6 +7,6 @@ import com.budgetor.Models.User;
  * CRUD refers to Create, Read, Update, Delete
 */
 
-public interface UserRepository : CrudRepository<User, Long> {
+public interface UserRepository : CrudRepository<User, Int> {
     fun findByEmail(email : String) : User?; // auto-magic function that must be 'findBy[your parameter]'. >:(
 }
