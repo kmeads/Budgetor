@@ -6,8 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.boot.web.server.Cookie
 import com.budgetor.Models.User;
+import com.budgetor.config.Message;
 import com.budgetor.Repositories.UserRepository;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -29,14 +31,16 @@ class UserController(private val repository : UserRepository) {
         @RequestParam email : String,
         @RequestParam password : String
     ) : ResponseEntity<Any> {
-        val user : User = repository.findByEmail(email) ?: throw ResponseStatusException(HttpStatus.NOT_FOUND, "User does not exist");
+        val user : User = repository.findByEmail(email) ?: return ResponseEntity.badRequest().body(Message("User does not exist"));
         
         //authenticate
-        if(user.authenticate(password)) return ResponseEntity.badRequest().body("User cannot be authenticated");
+        if(!user.authenticate(password)) 
+            return ResponseEntity.badRequest().body(Message("User cannot be authenticated"));
         
         return ResponseEntity.ok(user);
     }
 
+    @PreAuthorize("hasRole('admin')")
     @GetMapping("/all")
     fun getAllUsers() : Iterable<User> {
         return repository.findAll();
