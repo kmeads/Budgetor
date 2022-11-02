@@ -2,7 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org" lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Budgetor - Home</title>
+        <title>Budgetor - Landing</title>
         
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="../static/landing/css/header.css" th:href="@{/landing/css/header.css}" />
@@ -107,7 +107,9 @@
         <div id="callToArmsWrapper" class="row">
             <h1>My Statement to You.</h1>
             <p>The last thing you need to worry about when stressing about money is paying for budgeting software. This software is a passion project to help anyone track and make sense of their situation.  Take the busy work out of maintaining a budget and focus on the big picture goals that help you achieve financial freedom.</p>
-            <button id="signUpBtn">Sign Up</button>
+            <a href="/home">
+                <button id="signUpBtn">Sign Up</button>
+            </a>
         </div>
 
     </body>

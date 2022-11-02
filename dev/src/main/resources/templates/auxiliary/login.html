@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgetor - Login</title>
+</head>
+<body>
+    <div id="loginFormWrapper">
+        <form name="loginForm" th:action="@{/login}" method="post">
+            <fieldset>
+                <legend>Welcome Back</legend>
+                <!-- This will appear only if there is an error loggin in -->
+                <div th:if="${param.error}" class="alert alert-error">Invalid email or password</div>
+
+                <!-- This will appear only if user has logged out -->
+                <div th:if="${param.logout}" class="alert alert-sucess">Logout Successful.</div>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required/>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required/>
+
+                <div class="form-actions">
+                    <input type="submit" class="btn" value="Log In" />
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

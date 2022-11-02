@@ -1,6 +1,13 @@
+/* Global Variables */
+:root {
+    --budgetor-green: rgb(0, 88, 40);
+    --budgetor-gray: #f5f5f5;
+    --budgetor-blue: #0c0c59;
+}
+    
 body {
     margin: 0px;
-    background-color: #f5f5f5;
+    background-color: var(--budgetor-gray);
     font-family: 'Montserrat', sans-serif, 'Courier New', Courier, monospace;
 }
 
@@ -46,54 +53,6 @@ body {
     visibility: visible;
 }
 
-/* Log In Wrapper */
-#logInWrapper {
-    position: absolute;
-    bottom: -215px;
-    right: 10px;
-
-    visibility: hidden;
-    width: fit-content;
-    height: fit-content;
-    border: 2px solid black;
-    background-color: white;
-    color: black;
-    text-align: center;
-    border-radius: 10px;
-    padding: 16px 8px;
-    z-index: 3;
-}
-#logInWrapper div {
-    justify-content: center;
-    align-items: center;
-}
-.visible {
-    visibility: visible !important;
-}
-.logInInputs {
-    border: none;
-    border-radius: 3px;
-    margin-bottom: 16px;
-    width: 80%;
-    height: 25px;
-    text-align: center;
-    font-size: 16px;
-    background-color: #dadada;
-}
-#submitLogInBtn {
-    border: 3px solid #0c0c59de;
-    border-radius: 2px;
-    font-size: 16px;
-    width: fit-content;
-    height: fit-content;
-    padding: 16px 32px;
-    background-color: #0c0c59de;
-    color: white;
-}
-#submitLogInBtn:hover {
-    border-color: #3e3ed3de;
-}
-
 /* Opening Statement */
 #openStatementWrapper {
     font-size: 26px;
@@ -125,7 +84,7 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
-    background-color: #f5f5f5;
+    background-color: var(--budgetor-gray);
     height: 100vh;
     width: 100vw;
     z-index: -1;
@@ -138,7 +97,7 @@ body {
     animation-timing-function: ease-out;
 }
 .chartLines, .chartCircles {
-    stroke: rgb(0, 88, 40);
+    stroke: var(--budgetor-green);
 }
 .chartLines {
     stroke-linecap: round;
@@ -198,8 +157,8 @@ body {
 /* Seller Portion */
 #sellerWrapper {
     padding: 0px;
-    background-color: #cacaca;
-    color: black;
+    background-color: var(--budgetor-green);
+    color: white;
 }
 .sellerPointWrappers {
     width: 20%;
@@ -210,6 +169,7 @@ body {
 
 /* Call To Arms */
 #callToArmsWrapper {
+    background-color: var(--budgetor-gray);
     position: relative;
     display: flex;
     justify-content: center;
@@ -225,7 +185,7 @@ body {
 }
 
 #signUpBtn {
-    background-color: #0c0c59de;
+    background-color: var(--budgetor-blue);
     border: 1px solid white;
     border-radius: 12px;
     width: 120px;

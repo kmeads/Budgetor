@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder
@@ -13,6 +14,7 @@ import com.budgetor.service.JpaUserDetailsService;
 
 @Configuration
 @EnableWebSecurity
+@EnableMethodSecurity
 class SecurityConfig(val jpaUserDetailsService : JpaUserDetailsService) {
     @Bean
     fun configure(http : HttpSecurity) : SecurityFilterChain =
@@ -26,16 +28,29 @@ class SecurityConfig(val jpaUserDetailsService : JpaUserDetailsService) {
                     "/app",
                     "/signUp",
                     "/contact",
-                    "/landing/css/*", //enable all css
-                    "/landing/js/*", //enable all js
-                    "/landing/img/*", //enable all images
+                    "/landing/css/*", "/auxiliary/css/*", //enable all css
+                    "/landing/js/*", "/auxiliary/js/*", //enable all js
+                    "/landing/img/*", "/auxiliary/img/*", //enable all images
                     "/favicon.ico",
                     "/api/user",
+                    //auxiliary
+                    "/error",
+                    "/login/*",
                 ).permitAll()
                 .anyRequest().authenticated()
             .and()
             .userDetailsService(jpaUserDetailsService)
-            .httpBasic()
+            .formLogin()
+                .loginPage("/login")
+                .usernameParameter("email")
+                .loginProcessingUrl("/login")
+                .defaultSuccessUrl("/home")
+                .permitAll()
+            .and()
+            .logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("/login?logout")
+                .deleteCookies("JSESSIONID")
             .and().build();
 
     @Bean

@@ -1,36 +1,15 @@
 package com.budgetor.Controllers;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.http.HttpStatus;
-import com.sun.mail.iap.Response;
-
-import com.budgetor.Models.User;
+import org.springframework.security.access.prepost.PreAuthorize
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/home")
 public class HomeController {
+
+    @PreAuthorize("hasRole('USER')")
     @GetMapping()
-    fun index() : String = "landingFragments/landingPg";
-
-    @GetMapping("about")
-    fun about() : String = "landingFragments/about";
-
-    @GetMapping("app")
-    fun app() : String = "landingFragments/app";
-
-    @GetMapping("contact")
-    fun contact() : String = "landingFragments/contact";
-
-    @GetMapping("signUp")
-    fun signUp() : String = "landingFragments/signUp";
-
-    @GetMapping("error")
-    fun error() : String = "error";
+    fun home() : String = "homeFragments/home";
 }

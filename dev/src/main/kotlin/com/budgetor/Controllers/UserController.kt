@@ -40,7 +40,7 @@ class UserController(private val repository : UserRepository) {
         return ResponseEntity.ok(user);
     }
 
-    @PreAuthorize("hasRole('admin')")
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
     fun getAllUsers() : Iterable<User> {
         return repository.findAll();

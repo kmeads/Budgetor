@@ -1,0 +1,11 @@
+
+
+#loginFormWrapper {
+    background-color: white;
+    padding: 16px;
+    margin: 100px 35%;
+    border-radius: 6px;
+    align-items: center;
+    border: 2px solid black;
+    text-align: center;
+}

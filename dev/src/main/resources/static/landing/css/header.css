@@ -1,3 +1,10 @@
+/* Global Variables */
+:root {
+    --budgetor-green: rgb(0, 88, 40);
+    --budgetor-gray: #f5f5f5;
+    --budgetor-blue: #0c0c59;
+}
+
 #headerWrapper {
     background-color: white;
     color: black;
@@ -29,7 +36,7 @@
 }
 .headerLinks:hover {
     text-decoration: underline;
-    text-decoration-color: #0c0c59de;
+    text-decoration-color: var(--budgetor-blue);
     text-decoration-thickness: 2px;
 }
 #homeLink {
@@ -45,7 +52,7 @@
 }
 
 #logInBtn {
-    background-color: #0c0c59de;
+    background-color: var(--budgetor-blue);
     border: 1px solid white;
     border-radius: 12px;
     width: 100px;
@@ -57,5 +64,5 @@
     font-weight: bold;
 }
 #logInBtn:hover {
-    border: 6px solid #0c0c59de;
+    border: 6px solid var(--budgetor-blue);
 }

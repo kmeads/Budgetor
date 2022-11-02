@@ -5,9 +5,5 @@ This project's goal is to create a low-impact way to create and manage a budget 
 ## Organization
 #### Programming
 - Connor Meads
-#### Design
+#### Design Help
 - Jessica Allman
-
-## Policies
-- Official Form of Communication is via Discord
-- In-person meetings are held weekly on Mondays

@@ -1,13 +1,16 @@
 package com.budgetor.Models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import kotlin.collections.mutableListOf;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils
+import org.springframework.security.core.GrantedAuthority
 
 import javax.persistence.*;
+import java.sql.Date
 
 @Entity
 @Table(name="user")
@@ -34,6 +37,20 @@ data class User (
     @Column(name="phone_number")
     @JsonProperty("phone_number")
     var phoneNumber : String,
+
+    @Column(name="account_creation_date")
+    @JsonProperty("account_creation_date")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    var accountCreated : Date,
+
+    @Column(name="password_changed_date")
+    @JsonProperty("password_changed_date")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    var datePasswordChanged : Date,
+
+    @Column(name="is_account_locked")
+    @JsonProperty("is_account_locked")
+    var isAccountLocked : Boolean,
     
     // @OneToMany
     // var userRoles : MutableList<UserRole> = mutableListOf<UserRole>()
@@ -51,10 +68,10 @@ class SecurityUser(var user : User) : UserDetails {
     override fun getPassword() : String = user.password;
 
     //different roles the User can take
-    override fun getAuthorities() = AuthorityUtils.createAuthorityList(if(user.email == "admin") "admin" else "user");
+    override fun getAuthorities() : MutableCollection<GrantedAuthority> = mutableListOf<GrantedAuthority> (SimpleGrantedAuthority(if(user.email == "admin") "ROLE_ADMIN" else "ROLE_USER"))
 
     override fun isAccountNonExpired() : Boolean = true;
-    override fun isAccountNonLocked() : Boolean = true;
+    override fun isAccountNonLocked() : Boolean = !user.isAccountLocked;
     override fun isCredentialsNonExpired() : Boolean = true;
     override fun isEnabled() : Boolean = true;
 }

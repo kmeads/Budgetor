@@ -64,7 +64,6 @@ function validateInput() {
     }
 
     helpText.innerText = errorMsg;
-    console.log(`isValidInput: ${isValidInput}`);
     if(isValidInput) {
         createAccountBtn.disabled = false;
         createAccountBtn.classList.add('popAnimation');
@@ -76,6 +75,7 @@ function validateInput() {
 
 async function createAccount() {
     if(!isValidInput) return;
+    let creationDate = new Date().toISOString().slice(0, 19).replace('T', ' ');
 
     //send data to backend
     await fetch('http://localhost:8080/api/user', {
@@ -89,7 +89,10 @@ async function createAccount() {
             password: passwordInput.value,
             first_name: firstNameInput.value,
             last_name: lastNameInput.value,
-            phone_number: phoneNumberInput.value
+            phone_number: phoneNumberInput.value,
+            account_creation_date: creationDate,
+            password_changed_date: creationDate,
+            is_account_locked: false
         })
     }).then(response => {
         if(response.ok) {
