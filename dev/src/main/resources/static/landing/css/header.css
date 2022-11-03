@@ -4,29 +4,43 @@
     --budgetor-gray: #f5f5f5;
     --budgetor-blue: #0c0c59;
 }
-
 #headerWrapper {
     background-color: white;
     color: black;
 
+    height: 80px;
+    width: 100%;
+    z-index: 5;
+
     position: fixed;
-    top: 12px;
-    left: 50%;
-    width: 90%;
-    transform: translate(-50%);
+    top: 0px;
+    left: 0px;
+    margin: 0px;
+    padding: 0px;
 
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 128px;
-    box-shadow: -1px 0px 23px 3px rgba(0,0,0,1);
-    -webkit-box-shadow: -1px 0px 23px 3px rgba(0,0,0,1);
-    -moz-box-shadow: -1px 0px 23px 3px rgba(0,0,0,1);
-
-    padding: 2px 32px;
-    z-index: 4;
+    border-bottom: 2px solid black;
 }
-#headerWrapper div {
-    align-items: center;
+
+#logo {
+    font-size: 48px;
+    font-family: 'Koulen';
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+    float: left;
+    line-height: 80px;
+    margin-left: 50px;
+}
+.menu {
+    list-style: none;
+    height: 80px;
+    margin: 0px;
+}
+#leftMenu {
+    float: left;
+}
+#rightMenu {
+    float: right;
 }
 .headerLinks {
     font-size: 18px;
@@ -39,30 +53,85 @@
     text-decoration-color: var(--budgetor-blue);
     text-decoration-thickness: 2px;
 }
-#homeLink {
-    font-size: 48px;
-    font-family: 'Koulen';
-    color: black;
-    text-decoration: none;
-    margin-right: 32px;
+.headerItem {
+    display: inline-block;
+    line-height: 80px;
 }
-.menuParts {
-    width: 50%;
-    min-width: fit-content;
-}
-
 #logInBtn {
-    background-color: var(--budgetor-blue);
-    border: 1px solid white;
-    border-radius: 12px;
-    width: 100px;
-    height: 40px;
-    color: white;
-    margin-left: 16px;
-
-    font-size: 16px;
-    font-weight: bold;
+    margin: 0px 32px 0px 16px;
+    color: var(--budgetor-blue);
+    background-color: var(--budgetor-gray);
+    border: 1px solid var(--budgetor-blue);
 }
 #logInBtn:hover {
-    border: 6px solid var(--budgetor-blue);
+    background-color: var(--budgetor-green);
+    color: white;
+}
+.signUpBtns {
+    color: white;
+    background-color: var(--budgetor-blue);
+}
+.signUpBtns:hover {
+    background-color: var(--budgetor-gray);
+    color: var(--budgetor-blue);
+    border: 1px solid var(--budgetor-blue);
+    box-shadow: 0px 0px 1px 2px var(--budgetor-blue);
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: black;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check {
+    display: none;
+}
+@media (max-width: 952px) {
+    #logo {
+        font-size: 32px;
+        padding-left: 50px;
+    }
+    .headerLinks {
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px) {
+    #menuContainer {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        color: white;
+        background-color: var(--budgetor-blue);
+        transition: all .5s;
+    }
+    .checkbtn {
+        display: block;
+    }
+    #leftMenu li {
+        width: 100%;
+    }
+    #rightMenu li {
+        margin: 16px 16px;
+    }
+    .menu {
+        width: 100%;
+        text-align: center;
+        padding: 0px;
+    }
+    #leftMenu, #rightMenu {
+        float: none;
+        height: auto;
+    }
+    .headerLinks {
+        color: white
+    }
+    #check:checked ~ #menuContainer {
+        left: 0px;
+    }
 }

@@ -1,14 +1,23 @@
-<nav id="headerWrapper" class="row" th:fragment="header">
-    <div id="menuLeft" class="row menuParts">
-        <a id="homeLink" href="/">BUDGETOR</a>
-        <a class="headerLinks secondaryLinks" href="/about">ABOUT</a>
-        <a class="headerLinks secondaryLinks" href="/app">APP</a>
-        <a class="headerLinks secondaryLinks" href="/contact">CONTACT</a>
+<nav id="headerWrapper" th:fragment="header">
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <a href="/" id="logo">BUDGETOR</a>
+    <div id="menuContainer">
+        <ul id="leftMenu" class="menu">
+            <li class="headerItem"><a href="/about" class="headerLinks">ABOUT</a></li>
+            <li class="headerItem"><a href="/app" class="headerLinks">APP</a></li>
+            <li class="headerItem"><a href="/contact" class="headerLinks">CONTACT</a></li>
+        </ul>
+        <ul id="rightMenu" class="menu">
+            <li class="headerItem">
+                <button class="signUpBtns button">Sign Up</button>
+            </li>
+            <li class="headerItem">
+                <button id="logInBtn" class="button">Log In</button>
+            </li>
+        </ul>
     </div>
-    <div id="menuRight" class="rowRev menuParts">
-        <a href="/home">
-            <button id="logInBtn">Log In</button>
-        </a>
-        <a href="/signUp">Sign Up</a>
-    </div>
+    
 </nav>
