@@ -186,6 +186,7 @@ body {
     color: var(--budgetor-gray);
     margin: 16px 0px 16px 0px;
     width: 70%;
+    padding: 0px 32px;
 }
 .sellerPointSubWrapper-Img {
     background-color: transparent;
@@ -197,10 +198,12 @@ body {
     background-size: 50%;
 }
 .sellerTitles {
-    font-size: 36px;
+    font-size: 40px;
+    font-family: 'Koulen', serif;
+    letter-spacing: 3px;
 }
 .sellerDescriptors {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 #customizeImage {
