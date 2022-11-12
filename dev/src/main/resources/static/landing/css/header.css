@@ -134,4 +134,7 @@
     #check:checked ~ #menuContainer {
         left: 0px;
     }
+    #headerSignUpBtn {
+        box-shadow: 0px 0px 10px 1px white;
+    }
 }

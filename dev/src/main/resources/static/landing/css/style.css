@@ -59,7 +59,7 @@ body {
     border-radius: 6px;
     padding: 5px;
     position: absolute;
-    z-index: 1;
+    z-index: 100;
     left: 10px;
     top: -35px;
 }
@@ -170,14 +170,50 @@ body {
 /* Seller Portion */
 #sellerWrapper {
     padding: 0px;
-    background-color: var(--budgetor-green);
-    color: white;
+    background-color: var(--budgetor-gray);
 }
 .sellerPointWrappers {
-    width: 20%;
-    height: fit-content;
-    padding: 32px;
+    width: 100%;
+    height: 40vh;
     text-align: center;
+}
+.sellerPointSubWrapper {
+    padding:0px;
+    margin: 0px;
+}
+.sellerPointSubWrapper-Text {
+    background-color: var(--budgetor-green);
+    color: var(--budgetor-gray);
+    margin: 16px 0px 16px 0px;
+    width: 70%;
+}
+.sellerPointSubWrapper-Img {
+    background-color: transparent;
+    color: var(--budgetor-green);
+    width: 30%;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50%;
+}
+.sellerTitles {
+    font-size: 36px;
+}
+.sellerDescriptors {
+    font-size: 24px;
+}
+
+#customizeImage {
+    background-image: url('../img/customize.png');
+}
+#freeImage {
+    background-image: url('../img/free.png');
+}
+#privacyImage {
+    background-image: url('../img/privacy.png');
+}
+#goalImage {
+    background-image: url('../img/goal.png');
 }
 
 /* Call To Arms */
