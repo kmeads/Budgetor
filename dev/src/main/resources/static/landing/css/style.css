@@ -186,6 +186,7 @@ body {
     color: var(--budgetor-gray);
     margin: 16px 0px 16px 0px;
     width: 70%;
+    visibility: hidden;
 }
 .sellerPointSubWrapper-Img {
     background-color: transparent;
@@ -216,6 +217,42 @@ body {
 }
 #goalImage {
     background-image: url('../img/goal.png');
+}
+
+/* Seller Point Animations */
+.sellerAnimationL {
+    animation: slideLtoR 1.5s 1;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+.sellerAnimationR {
+    animation: slideRtoL 1.5s 1;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards; /* Lets the final state of the animation be final state of element */
+}
+@keyframes slideLtoR {
+    0% {
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+    80% {
+        transform: translateX(20px);
+    }
+    100% {
+        visibility: visible;
+    }
+}
+@keyframes slideRtoL {
+    0% {
+        transform: translateX(100%);
+        visibility: visible;
+    }
+    80% {
+        transform: translateX(-20px);
+    }
+    100% {
+        visibility: visible;
+    }
 }
 
 /* Call To Arms */

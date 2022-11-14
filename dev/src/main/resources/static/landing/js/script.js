@@ -8,7 +8,22 @@ sellerPointWrappers.forEach((element, index) => {
     index % 2 === 0 ? element.style.flexDirection = "row" : element.style.flexDirection = "row-reverse";
 });
 
+//set animation on sellerPointWrappersText when scrolled into view
+const sellerPointObserverL = new IntersectionObserver(entries => {
+    entries.forEach(entry=> {
+        if(entry.isIntersecting) entry.target.classList.add('sellerAnimationL');
+    });
+});
+const sellerPointObserverR = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('sellerAnimationR');
+    });
+});
+
 sellerPointWrappersText.forEach((element, index) => {
+    //add observers based on which element it is
+    index % 2 === 0 ? sellerPointObserverL.observe(element) : sellerPointObserverR.observe(element);
+
     if(index == 0) {
         element.style.borderRadius = "0px 0px " + prefBorderRadius + " 0px";
         element.style.marginTop = "0px";
