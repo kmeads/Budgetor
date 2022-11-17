@@ -38,6 +38,7 @@
 }
 #leftMenu {
     float: left;
+    padding-left: 40px;
 }
 #rightMenu {
     float: right;
@@ -90,16 +91,7 @@
 #check {
     display: none;
 }
-@media (max-width: 952px) {
-    #logo {
-        font-size: 32px;
-        padding-left: 50px;
-    }
-    .headerLinks {
-        font-size: 16px;
-    }
-}
-@media (max-width: 858px) {
+@media (max-width: 959px) {
     #menuContainer {
         position: fixed;
         top: 80px;

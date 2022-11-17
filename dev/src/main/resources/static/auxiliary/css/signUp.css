@@ -26,12 +26,16 @@ body {
 }
 #signUpFormWrapper {
     background-color: white;
-    padding: 16px;
-    margin: 100px 35%;
+    padding: 64px;
+    margin: 100px;
     border-radius: 6px;
     align-items: center;
     border: 2px solid rgb(182, 182, 182);
     text-align: center;
+    width: fit-content;
+    position: sticky;
+    left: 50%;
+    transform: translate(-50%);
 }
 .inputWrappers {
     justify-content: space-around;

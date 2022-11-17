@@ -36,6 +36,7 @@ class SecurityConfig(val jpaUserDetailsService : JpaUserDetailsService) {
                     //auxiliary
                     "/error",
                     "/login/*",
+                    "/privacy",
                 ).permitAll()
                 .anyRequest().authenticated()
             .and()

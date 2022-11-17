@@ -4,28 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budgetor - Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="../static/auxiliary/css/login.css" th:href="@{/auxiliary/css/login.css}" />
+    <link rel="stylesheet" type="text/css" href="../static/landing/css/header.css" th:href="@{/landing/css/header.css}" />
+    <link rel="stylesheet" type="text/css" href="../static/landing/css/style.css" th:href="@{/landing/css/style.css}" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- JS -->
+    <script type="text/javascript" src="/landing/js/script.js" th:href="@{/landing/js/script.js}" defer></script>
+    <script type="text/javascript" src="https://kit.fontawesome.com/a076d05399.js" defer></script>
 </head>
 <body>
+    <nav th:replace="landingFragments/header :: header" />
     <div id="loginFormWrapper">
-        <form name="loginForm" th:action="@{/login}" method="post">
-            <fieldset>
-                <legend>Welcome Back</legend>
-                <!-- This will appear only if there is an error loggin in -->
-                <div th:if="${param.error}" class="alert alert-error">Invalid email or password</div>
+        <form id="loginForm" name="loginForm" th:action="@{/login}" method="post">
+            <h1>Welcome Back</h1>
+            <!-- This will appear only if there is an error loggin in -->
+            <div th:if="${param.error}" class="alert alert-error">Invalid email or password</div>
 
-                <!-- This will appear only if user has logged out -->
-                <div th:if="${param.logout}" class="alert alert-sucess">Logout Successful.</div>
+            <!-- This will appear only if user has logged out -->
+            <div th:if="${param.logout}" class="alert alert-sucess">Logout Successful.</div>
+            <div class="inputContainer">
+                <input type="email" id="email" class="loginInputs" name="email" placeholder=" " required/>
+                <label id="emailLabel" class="inputLabels" for="email">Email</label>
+            </div>
+            <div class="inputContainer">
+                <input type="password" id="password" class="loginInputs" name="password" placeholder=" " required/>
+                <label id="passwordLabel" class="inputLabels" for="password">Password</label>
+            </div>
 
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required/>
-
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required/>
-
-                <div class="form-actions">
-                    <input type="submit" class="btn" value="Log In" />
-                </div>
-            </fieldset>
+            <div class="form-actions">
+                <input type="submit" id="submitBtn" value="Log In" />
+            </div>
         </form>
     </div>
 </body>

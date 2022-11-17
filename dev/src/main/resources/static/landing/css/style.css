@@ -198,12 +198,17 @@ body {
     background-size: 50%;
 }
 .sellerTitles {
-    font-size: 40px;
+    font-size: 48px;
     font-family: 'Koulen', serif;
     letter-spacing: 3px;
+    margin: 10px 0px 0px 0px;
 }
 .sellerDescriptors {
-    font-size: 20px;
+    font-size: 24px;
+    width: 60%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 #customizeImage {

@@ -35,4 +35,7 @@ public class LandingController {
 
     @GetMapping("login")
     fun login() : String = "auxiliary/login";
+
+    @GetMapping("privacy")
+    fun privacy() : String = "auxiliary/privacy";
 }
