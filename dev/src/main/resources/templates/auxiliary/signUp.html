@@ -6,6 +6,7 @@
 
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="../static/auxiliary/css/signUp.css" th:href="@{/auxiliary/css/signUp.css}" />
+        <link rel="stylesheet" type="text/css" href="../static/auxiliary/css/login.css" th:href="@{/auxiliary/css/login.css}" />
         <link rel="stylesheet" type="text/css" href="/landing/css/style.css" th:href="@{/landing/css/style.css}" />
 
         <!-- Fonts -->
@@ -24,33 +25,56 @@
                 <a href="/" >&#8592; BUDGETOR</a>
             </div>
         </nav>
-        <div id="signUpFormWrapper">
-            <h1>Create an Account</h1><br>
-            <!-- Name -->
-            <div class="row inputWrappers">
-                <input type="text" id="firstNameInput" class="signUpFormInputs" oninput="validateInput()" placeholder="First Name (optional)">
-                <input type="text" id="lastNameInput" class="signUpFormInputs" oninput="validateInput()" placeholder="Last Name (optional)">
-            </div>
-            <!-- Contact Details -->
-            <div class="row inputWrappers">
-                <div class="tooltip">
-                    <input type="tel" id="phoneNumberInput" class="signUpFormInputs" oninput="validateInput()" pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}" placeholder="Phone Number (optional)">
-                    <span class="tooltipText">(###) ###-####</span>
+        <div class="FormWrapper">
+            <div class="form">
+                <h1>Create an Account</h1>
+
+                <!-- Name -->
+                <div class="row inputWrapper">
+                    <!-- First Name -->
+                    <div class="inputContainer">
+                        <input type="text" id="firstName" class="inputs" name="firstName" placeholder=" " />
+                        <label class="inputLabels" for="firstName">First Name (Optional)</label>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="inputContainer">
+                        <input type="text" id="lastName" class="inputs" name="lastName" placeholder=" " />
+                        <label class="inputLabels" for="lastName">Last Name (Optional)</label>
+                    </div>
                 </div>
-                <input type="email" id="emailInput" class="signUpFormInputs" oninput="validateInput()" placeholder="Email" required>
-            </div>
-            <div class="row inputWrappers">
-                <input type="password" id="passwordInput" class="signUpFormInputs" oninput="validateInput()" placeholder="Password" required>
-            </div>
-            <div class="row inputWrappers">
-                <input type="password" id="passwordConfirmationInput" class="signUpFormInputs" oninput="validateInput()" placeholder="Confirm Password" required>
-            </div>
-            <div id="helpText" class="row"></div>
-            <!-- Submit & Clear Btns -->
-            <div class="row inputWrappers">
-                <!-- Account Creation Btn -->
-                <button type="button" id="createAccountBtn" onclick="createAccount()" disabled>Create Account</button>
-            </div>
+                
+                <!-- Contact Info -->
+                <div class="row inputWrapper">
+                    <!-- Email -->
+                    <div class="inputContainer">
+                        <input type="email" id="email" class="inputs" name="email" oninput="validateInput()" placeholder=" " />
+                        <label class="inputLabels" for="email">Email</label>
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="inputContainer">
+                        <input type="tel" id="phoneNumber" class="inputs" name="phoneNumber" pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}" oninput="validateInput()" placeholder=" " />
+                        <label class="inputLabels" for="phoneNumber">Phone Number (Optional)</label>
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div id="passwordContainer" class="inputContainer">
+                    <input type="password" id="password" class="inputs" name="password" oninput="validateInput()" placeholder=" " required/>
+                    <label id="passwordLabel" class="inputLabels" for="password">Password</label>
+                </div>
+                
+                <!-- Password Confimation -->
+                <div class="inputContainer">
+                    <input type="password" id="passwordConfirmation" class="inputs" name="passwordConfirmation" oninput="validateInput()" placeholder=" " required />
+                    <label id="passwordConfirmationLabel" class="inputLabels" for="passwordConfirmation">Confirm Password</label>
+                </div>
+
+                <ul id="helpText"></ul>
+
+                <input type="submit" id="createAccountBtn" class="submitBtn" value="Submit" onclick="createAccount()" disabled />
+            </form>
         </div>
     </body>
 </html>

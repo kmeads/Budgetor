@@ -22,25 +22,26 @@
 </head>
 <body>
     <nav th:replace="landingFragments/header :: header" />
-    <div id="loginFormWrapper">
-        <form id="loginForm" name="loginForm" th:action="@{/login}" method="post">
+    <div class="formWrapper">
+        <form class="form" name="loginForm" th:action="@{/login}" method="post">
             <h1>Welcome Back</h1>
             <!-- This will appear only if there is an error loggin in -->
             <div th:if="${param.error}" class="alert alert-error">Invalid email or password</div>
 
             <!-- This will appear only if user has logged out -->
             <div th:if="${param.logout}" class="alert alert-sucess">Logout Successful.</div>
+
             <div class="inputContainer">
-                <input type="email" id="email" class="loginInputs" name="email" placeholder=" " required/>
+                <input type="email" id="email" class="inputs" name="email" placeholder=" " required/>
                 <label id="emailLabel" class="inputLabels" for="email">Email</label>
             </div>
             <div class="inputContainer">
-                <input type="password" id="password" class="loginInputs" name="password" placeholder=" " required/>
+                <input type="password" id="password" class="inputs" name="password" placeholder=" " required/>
                 <label id="passwordLabel" class="inputLabels" for="password">Password</label>
             </div>
 
             <div class="form-actions">
-                <input type="submit" id="submitBtn" value="Log In" />
+                <input type="submit" id="logInBtn" class="submitBtn" value="Log In" />
             </div>
         </form>
     </div>

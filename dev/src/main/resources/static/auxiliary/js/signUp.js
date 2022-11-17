@@ -1,11 +1,10 @@
 //pertinent DOM elements
-const firstNameInput = document.getElementById('firstNameInput');
-const lastNameInput = document.getElementById('lastNameInput');
-const phoneNumberInput = document.getElementById('phoneNumberInput');
-const emailInput = document.getElementById('emailInput');
-const passwordInput = document.getElementById('passwordInput');
-const passwordConfirmationInput = document.getElementById('passwordConfirmationInput');
-const inputElements = document.querySelectorAll('signUpFormInputs');
+const firstNameInput = document.getElementById('firstName');
+const lastNameInput = document.getElementById('lastName');
+const phoneNumberInput = document.getElementById('phoneNumber');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
+const passwordConfirmationInput = document.getElementById('passwordConfirmation');
 const helpText = document.getElementById('helpText');
 const createAccountBtn = document.getElementById('createAccountBtn');
 
@@ -13,57 +12,75 @@ let isValidInput = false;
 const phoneRegEx = /\(\d{3}\)\s\d{3}-\d{4}/;
 const emailRegEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 const passwordRegEx =  /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})/;
+const border_unaffected = '1px solid rgb(103, 103, 103)';
+const border_error = '1px solid red';
+const border_pass = '1px solid rgb(0, 88, 40)';
 
 //checks validity of input
 function validateInput() {
+    //get rid of bullets
+    let childLi = helpText.lastElementChild;
+    while(childLi) {
+        helpText.removeChild(childLi);
+        childLi = helpText.lastElementChild;
+    }
+
     let errorMsg = '';
     isValidInput = true;
 
     //validate phone number
-    if(phoneNumberInput.value === '') phoneNumberInput.style.border = 'none';
+    if(phoneNumberInput.value === '') phoneNumberInput.style.border = border_unaffected;
     else if(phoneRegEx.exec(phoneNumberInput.value)) {
-        phoneNumberInput.style.border = '1px solid green';
+        phoneNumberInput.style.border = border_pass;
     } else {
-        phoneNumberInput.style.border = '1px solid red';
+        phoneNumberInput.style.border = border_error;
         isValidInput = false;
-        errorMsg = errorMsg + 'Phone number is invalid. Make sure it is of the form: (###) ###-####\n';
+        errorMsg = errorMsg + '|Phone Number should be of the form: (###) ###-####\n';
     }
 
     //email
     if(emailInput.value === '') {
-        emailInput.style.border = 'none';
+        emailInput.style.border = border_unaffected;
         isValidInput = false;
     } else if(emailRegEx.exec(emailInput.value)) {
-        emailInput.style.border = '1px solid green';
+        emailInput.style.border = border_pass;
     } else {
-        emailInput.style.border = '1px solid red';
-        errorMsg = errorMsg + 'Email Address is invalid.\n';
+        emailInput.style.border = border_error;
+        errorMsg = errorMsg + '|Email Address is invalid.\n';
         isValidInput = false;
     }
 
     //password
     if(passwordInput.value === '') {
-        passwordInput.style.border = 'none';
+        passwordInput.style.border = border_unaffected;
         isValidInput = false;
     } else if(passwordRegEx.exec(passwordInput.value)) {
-        passwordInput.style.border = '1px solid green';
+        passwordInput.style.border = border_pass;
     } else {
-        passwordInput.style.border = '1px solid red';
-        errorMsg = errorMsg + 'Password needs at least 1 lowercase letter, 1 uppercase letter, one digit, one special character and be at least 8 characters long\n';
+        passwordInput.style.border = border_error;
+        errorMsg = errorMsg + '|Password needs at least 1 lowercase letter|Password needs 1 uppercase letter|Password needs at least one digit|Password needs at least one special character|Password needs to be at least 8 characters long\n';
         isValidInput = false;
     }
 
     if(passwordConfirmationInput.value === '' && passwordInput.value === '') {
-        passwordConfirmationInput.style.border = 'none';
+        passwordConfirmationInput.style.border = border_unaffected;
     } else if(passwordConfirmationInput.value === passwordInput.value) {
-        passwordConfirmationInput.style.border = '1px solid green';
+        passwordConfirmationInput.style.border = border_pass;
     } else {
-        passwordConfirmationInput.style.border = '1px solid red';
-        errorMsg = errorMsg + 'Confirmation password must match password';
+        passwordConfirmationInput.style.border = border_error;
+        errorMsg = errorMsg + '|Confirmation password must match password';
         isValidInput = false;
     }
 
-    helpText.innerText = errorMsg;
+    //append items to helpText
+    errors = errorMsg.split('|');
+    errors.forEach((element, index) => {
+        if(index === 0) return; // this is because every error *starts* with a |
+        const li = document.createElement('li');
+        li.innerText = element;
+        helpText.appendChild(li);
+    });
+
     if(isValidInput) {
         createAccountBtn.disabled = false;
         createAccountBtn.classList.add('popAnimation');
