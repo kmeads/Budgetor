@@ -13,23 +13,42 @@ body {
 }
 
 .menu-open {
-    left: 450px; /* Width is 421.  450 essentially adds 29px padding */
+    left: 420px;
+}
+.menu-open::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, var(--budgetor-green), transparent);
 }
 
 .menu-open .menu-slide {
     left: 0px;
 }
 .menu-open #menu-toggle {
-    left: -90px;
+    left: -149px;
 } 
 
 #menu-toggle {
     position: relative;
     z-index: 1;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px 8px;
+    width: fit-content;
+    border: 2px solid transparent;
+}
+#menu-toggle:hover {
+    border-radius: 14px;
+    border: 2px solid black;
 }
 .menu-slide {
     background-color: var(--budgetor-green);
-    border-right: 1px solid black;
     color: white;
     position: fixed;
     top: 0px;
@@ -53,7 +72,7 @@ body {
     font-size: 48px;
     font-family: 'Koulen', serif;
     letter-spacing: 3px;
-    margin-top: 0px;
+    margin: 0px;
 }
 
 #menu-container {
@@ -67,12 +86,62 @@ body {
     display: flex;
     flex-direction: column;
 }
-#bottom-menu {
-    text-align: center;
+.menu-parts > * {
+    padding-top: 36px;
+}
+.menu-item {
+    text-decoration: none;
+    color: white;
+    font-family: 'Montserrat', sans-serif, 'Courier New', Courier, monospace;
+    font-size: 24px;
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+}
+.menu-item::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0px;
+    left: 0px;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+.menu-item:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+#bottom-menu .menu-item {
+    margin: auto;
+    font-size: 18px;
+    padding-top: 18px;
 }
 #donate-ad-wrapper {
     margin: auto;
     border: 2px solid black;
     border-radius: 5px;
     text-align: center;
+    background-color: white;
+    color: black;
+    padding: 0px 24px;
+}
+#donate-ad-wrapper button {
+    margin-bottom: 16px;
+    width: 120px;
+    height: auto;
+    border: 2px solid transparent;
+    border-radius: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 10px 0px;
+    box-shadow: 0 0 20px rgba(104, 85, 224, 0.2);
+    color: white;
+    background-color: var(--budgetor-green);
+    cursor: pointer;
+}
+#donate-ad-wrapper button:hover {
+    border: 2px solid black;
 }
