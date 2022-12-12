@@ -1,12 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Budgetor - Home</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="/home/css/style.css" th:href="@{/home/css/style.css}" />
+        <link rel="stylesheet" type="text/css" href="/home/css/menu.css" th:href="@{/home/css/menu.css}" />
+            <!-- Fonts -->
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+
+        <!-- JS -->
+        <script type="text/javascript" src="/home/js/menu.js" th:href="@{/home/js/menu.js}" defer></script>
     </head>
     <body>
+        <header th:replace="homeFragments/menu :: header" />
         <h1>You've made it home!</h1>
     </body>
 </html>

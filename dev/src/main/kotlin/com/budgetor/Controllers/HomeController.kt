@@ -11,5 +11,10 @@ public class HomeController {
 
     @PreAuthorize("hasRole('USER')")
     @GetMapping()
-    fun home() : String = "homeFragments/home";
+    fun current() : String = "homeFragments/home.html";
+
+    @PreAuthorize("hasRole('USER')")
+    @GetMapping("/bigPicture")
+    fun bigPicture() : String = "homeFragments/bigPicture.html";
+
 }

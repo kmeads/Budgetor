@@ -1,0 +1,78 @@
+/* Global Variables */
+:root {
+    --budgetor-green: rgb(0, 88, 40);
+    --budgetor-gray: #f5f5f5;
+    --budgetor-blue: #0c0c59;
+}
+
+body {
+    position: relative;
+    left: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif, 'Courier New', Courier, monospace;
+}
+
+.menu-open {
+    left: 450px; /* Width is 421.  450 essentially adds 29px padding */
+}
+
+.menu-open .menu-slide {
+    left: 0px;
+}
+.menu-open #menu-toggle {
+    left: -90px;
+} 
+
+#menu-toggle {
+    position: relative;
+    z-index: 1;
+}
+.menu-slide {
+    background-color: var(--budgetor-green);
+    border-right: 1px solid black;
+    color: white;
+    position: fixed;
+    top: 0px;
+    left: -421px;
+    width: 400px;
+    height: 100%;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* slide out animation */
+.menu-slide, body, #menu-toggle {
+    -webkit-transition: left 0.5s ease;
+    -moz-transition: left 0.5s ease;
+    transition: left 0.5s ease;
+}
+
+#menu-header {
+    font-size: 48px;
+    font-family: 'Koulen', serif;
+    letter-spacing: 3px;
+    margin-top: 0px;
+}
+
+#menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+}
+.menu-parts {
+    padding: 0px 32px 32px 32px;
+    display: flex;
+    flex-direction: column;
+}
+#bottom-menu {
+    text-align: center;
+}
+#donate-ad-wrapper {
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+}

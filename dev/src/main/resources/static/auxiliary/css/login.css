@@ -48,6 +48,17 @@ body {
     margin-bottom: 30px;
 }
 
+.alert {
+    margin-bottom: 16px;
+    text-align: center;
+}
+.alert-error {
+    color: red;
+}
+.alert-success {
+    color: green;
+}
+
 .inputs {
     position: absolute;
     top: 0;
@@ -74,8 +85,9 @@ body {
     transition: 0.3s;
 }
 
-#logInBtn {
+#formLogInBtn {
     background-color: var(--budgetor-green);
+    margin: auto;
 }
 .submitBtn {
     display: block;

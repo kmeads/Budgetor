@@ -113,7 +113,7 @@ async function createAccount() {
         })
     }).then(response => {
         if(response.ok) {
-            alert('created');
+            window.location.replace('/home');
         } else alert('error');
     });
 }
