@@ -1,5 +1,6 @@
 package com.budgetor.Models;
 
+import com.budgetor.Models.UserRole;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import kotlin.collections.mutableListOf;
@@ -51,13 +52,13 @@ data class User (
     @Column(name="is_account_locked")
     @JsonProperty("is_account_locked")
     var isAccountLocked : Boolean,
-    
-    // @OneToMany
-    // var userRoles : MutableList<UserRole> = mutableListOf<UserRole>()
 ) {
     init {
         this.password = BCryptPasswordEncoder(10).encode(this.password); // encrypts password of user *before* it enters the DB
     }
+
+    @OneToMany(orphanRemoval = true)
+    var userRoles : MutableList<UserRole> = mutableListOf<UserRole>();
 
     fun authenticate(challenge : String) : Boolean = BCryptPasswordEncoder().matches(challenge, this.password);
 }

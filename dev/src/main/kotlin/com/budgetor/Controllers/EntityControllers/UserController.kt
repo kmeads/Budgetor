@@ -1,4 +1,4 @@
-package com.budgetor.Controllers;
+package com.budgetor.Controllers.EntityControllers;
 
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -9,6 +9,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.boot.web.server.Cookie
 import com.budgetor.Models.User;
+import com.budgetor.Models.UserRole;
 import com.budgetor.config.Message;
 import com.budgetor.Repositories.UserRepository;
 import io.jsonwebtoken.Jwts;
