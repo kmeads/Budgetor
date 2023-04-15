@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <title>@ViewData["Title"] - Budgetor</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="~/css/Landing/header.css" />
+        @RenderSection("Styles", required: false)
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap" rel="stylesheet"> 
+
+        <!-- JS -->  
+        <script type="text/javascript" src="https://kit.fontawesome.com/a076d05399.js" defer></script>
+    </head>
+    <body>
+        <nav id="headerWrapper">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <a href="/" id="logo">BUDGETOR</a>
+            <div id="menuContainer">
+                <ul id="leftMenu" class="menu">
+                    <li class="headerItem"><a href="/Landing/about" class="headerLinks">ABOUT</a></li>
+                    <li class="headerItem"><a href="/Landing/app" class="headerLinks">APP</a></li>
+                    <li class="headerItem"><a href="/Landing/contact" class="headerLinks">CONTACT</a></li>
+                </ul>
+                <ul id="rightMenu" class="menu">
+                    <li class="headerItem">
+                        <a href="/signUp">
+                            <button id="headerSignUpBtn" class="signUpBtns button">Sign Up</button>
+                        </a>
+                    </li>
+                    <li class="headerItem">
+                        <a href="/login">
+                            <button id="logInBtn" class="button">Log In</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        @RenderBody()
+
+        @RenderSection("Scripts", required: false)
+    </body>
+</html>

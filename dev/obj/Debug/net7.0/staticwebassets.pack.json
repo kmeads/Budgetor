@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\programming\\Budgetor\\dev\\wwwroot\\assets\\img\\customize.png",
+      "PackagePath": "staticwebassets\\assets\\img\\customize.png"
+    },
+    {
+      "Id": "C:\\programming\\Budgetor\\dev\\wwwroot\\assets\\img\\free.png",
+      "PackagePath": "staticwebassets\\assets\\img\\free.png"
+    },
+    {
+      "Id": "C:\\programming\\Budgetor\\dev\\wwwroot\\assets\\img\\goal.png",
+      "PackagePath": "staticwebassets\\assets\\img\\goal.png"
+    },
+    {
+      "Id": "C:\\programming\\Budgetor\\dev\\wwwroot\\assets\\img\\privacy.png",
+      "PackagePath": "staticwebassets\\assets\\img\\privacy.png"
+    },
+    {
+      "Id": "C:\\programming\\Budgetor\\dev\\wwwroot\\css\\Landing\\about.css",
+      "PackagePath": "staticwebassets\\css\\Landing\\about.css"
+    },
+    {
+      "Id": "C:\\programming\\Budgetor\\dev\\wwwroot\\css\\Landing\\app.css",
+      "PackagePath": "staticwebassets\\css\\Landing\\app.css"
+    },
+    {
+      "Id": "C:\\programming\\Budgetor\\dev\\wwwroot\\css\\Landing\\contact.css",
+      "PackagePath": "staticwebassets\\css\\Landing\\contact.css"
+    },
+    {
+      "Id": "C:\\programming\\Budgetor\\dev\\wwwroot\\css\\Landing\\header.css",
+      "PackagePath": "staticwebassets\\css\\Landing\\header.css"
+    },
+    {
+      "Id": "C:\\programming\\Budgetor\\dev\\wwwroot\\css\\Landing\\landing.css",
+      "PackagePath": "staticwebassets\\css\\Landing\\landing.css"
+    },
+    {
+      "Id": "C:\\programming\\Budgetor\\dev\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\programming\\Budgetor\\dev\\wwwroot\\js\\Landing\\landing.js",
+      "PackagePath": "staticwebassets\\js\\Landing\\landing.js"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.budgetor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.budgetor.props",
+      "PackagePath": "build\\budgetor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.budgetor.props",
+      "PackagePath": "buildMultiTargeting\\budgetor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.budgetor.props",
+      "PackagePath": "buildTransitive\\budgetor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

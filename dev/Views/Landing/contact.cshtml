@@ -1,0 +1,43 @@
+@{
+    Layout = "_LandingLayout";
+}
+<!-- CSS -->
+@section Styles {
+    <link rel="stylesheet" type="text/css" href="~/css/Landing/contact.css" />
+}
+
+<h1 class="openingItem">Have some feedback?</h1>
+<!-- L. Half of Screen.  Email Form -->
+<div id="contactWrapper" class="col">
+    <h2>Send a message</h2>
+    <p>Have a question about any part of the website?  Use this form to send us a message and let us know what's on your mind!</p>
+    <div id="contactFormWrapper">
+        <!-- Name -->
+        <div class="row inputWrappers">
+            <input type="text" id="firstNameInput" class="contactFormInputs" placeholder="First Name" required>
+            <input type="text" id="lastNameInput" class="contactFormInputs" placeholder="Last Name">
+        </div>
+        <!-- Contact Details -->
+        <div class="row inputWrappers">
+            <div class="tooltip">
+                <input type="tel" id="phoneNumberInput" class="contactFormInputs" pattern="([0-9]{3}) [0-9]{3}-[0-9]{4}" placeholder="Phone Number (optional)">
+                <span class="tooltipText">(###) ###-####</span>
+            </div>
+            <input type="email" id="emailInput" class="contactFormInputs" placeholder="Email (optional)">
+        </div>
+        <div class="row">
+            <textarea id="messageInput" placeholder="Your message..."></textarea>
+        </div>
+        <!-- Submit & Clear Btns -->
+        <div class="row inputWrappers">
+            <!-- Submit Btn -->
+            <div class="col">
+                <button type="submit" id="sendMsgBtn" class="contactBtns" onclick="sendEmail()">Send</button>
+            </div>
+            <!-- Clear Btn -->
+            <div class="col">
+                <button type="button" id="clearMsgBtn" class="contactBtns" onclick="clearForm()">Clear</button>
+            </div>
+        </div>
+    </div>
+</div>
