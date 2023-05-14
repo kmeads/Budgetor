@@ -5,10 +5,10 @@ Budgetor will be a web application designed to deliver budgeting and financial t
 ### 1. Roles & Goals
 - **1.1** User
     - **1.1.1:** Easily be able to add, remove, and modify budget categories.
-    - **1.1.2:** Easily be able to view relavent information regarding the end-users finances in a convenient and understandable manner such as graphs or numbers.
+    - **1.1.2:** Easily be able to view relevant information regarding the end-user's finances in a convenient and understandable manner such as graphs or numbers.
     - **1.1.3:** Be alerted when an untracked transaction is found and prompted to categorize it.
     - **1.1.4:** Be able to add other users to their budget.
-        - **1.1.4.1:** Be able to modify other users permissions to their budget.
+        - **1.1.4.1:** Be able to modify other user's permissions to their budget.
             - **1.1.4.1.1:** View Only
             - **1.1.4.1.2:** Edit
         - **1.1.4.2:** Be able to remove other users from their budget.
